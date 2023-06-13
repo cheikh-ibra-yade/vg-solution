@@ -1,0 +1,111 @@
+[08-May-2023 12:24:39 UTC] WordPress database error Table 'wp_e_events' already exists for query CREATE TABLE `wp_e_events` (
+			id bigint(20) unsigned auto_increment primary key,
+			event_data text null,
+			created_at datetime not null
+		) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci; made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, Elementor\Plugin->init, Elementor\Plugin->init_components, Elementor\Core\Admin\Admin->__construct, Elementor\Plugin->init_common, Elementor\Core\Common\App->init_components, Elementor\Core\Common\Modules\EventTracker\Module->__construct, Elementor\Core\Common\Modules\EventTracker\DB->__construct, Elementor\Core\Common\Modules\EventTracker\DB->create_table
+[08-May-2023 12:24:39 UTC] WordPress database error Duplicate key name 'created_at_index' for query ALTER TABLE wp_e_events
+    		ADD INDEX `created_at_index` (`created_at`)
+		 made by require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), do_action('init'), WP_Hook->do_action, WP_Hook->apply_filters, Elementor\Plugin->init, Elementor\Plugin->init_components, Elementor\Core\Admin\Admin->__construct, Elementor\Plugin->init_common, Elementor\Core\Common\App->init_components, Elementor\Core\Common\Modules\EventTracker\Module->__construct, Elementor\Core\Common\Modules\EventTracker\DB->__construct, Elementor\Core\Common\Modules\EventTracker\DB->add_indexes
+[08-May-2023 12:38:53 UTC] Sync process for Gutenberg Blocks has started.
+[08-May-2023 12:38:53 UTC] CATEGORY:Importing categories..
+[08-May-2023 12:38:53 UTC] CATEGORY:Storing in option ast-block-templates-categories
+[08-May-2023 12:38:53 UTC] CATEGORY:Completed category import.
+[08-May-2023 12:38:53 UTC] BLOCK: Getting Total Blocks
+[08-May-2023 12:38:53 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/get-blocks-count/?page_builder=gutenberg&wireframe=yes
+[08-May-2023 12:38:53 UTC] BLOCK: Requests count 4
+[08-May-2023 12:38:53 UTC] BLOCK: Importing request 1 ..
+[08-May-2023 12:38:53 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=1&wireframe=yes
+[08-May-2023 12:38:54 UTC] BLOCK: Storing in option ast-block-templates-blocks-1
+[08-May-2023 12:38:54 UTC] BLOCK: Completed request 1
+[08-May-2023 12:38:54 UTC] BLOCK: Importing request 2 ..
+[08-May-2023 12:38:54 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=2&wireframe=yes
+[08-May-2023 12:38:54 UTC] BLOCK: Storing in option ast-block-templates-blocks-2
+[08-May-2023 12:38:54 UTC] BLOCK: Completed request 2
+[08-May-2023 12:38:54 UTC] BLOCK: Importing request 3 ..
+[08-May-2023 12:38:54 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=3&wireframe=yes
+[08-May-2023 12:38:54 UTC] BLOCK: Storing in option ast-block-templates-blocks-3
+[08-May-2023 12:38:54 UTC] BLOCK: Completed request 3
+[08-May-2023 12:38:54 UTC] BLOCK: Importing request 4 ..
+[08-May-2023 12:38:54 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=4&wireframe=yes
+[08-May-2023 12:38:56 UTC] BLOCK: Storing in option ast-block-templates-blocks-4
+[08-May-2023 12:38:56 UTC] BLOCK: Completed request 4
+[08-May-2023 12:38:56 UTC] SITE: Getting Total Sites
+[08-May-2023 12:38:56 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/get-total-pages/?page_builder=gutenberg
+[08-May-2023 12:38:56 UTC] SITE: Request count 2
+[08-May-2023 12:38:56 UTC] SITE: Importing request 1 ..
+[08-May-2023 12:38:56 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=1&page-builder=gutenberg
+[08-May-2023 12:38:57 UTC] SITE: Storing in option ast-block-templates-sites-1
+[08-May-2023 12:38:57 UTC] SITE: Completed request 1
+[08-May-2023 12:38:57 UTC] SITE: Importing request 2 ..
+[08-May-2023 12:38:57 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=2&page-builder=gutenberg
+[08-May-2023 12:38:57 UTC] SITE: Storing in option ast-block-templates-sites-2
+[08-May-2023 12:38:57 UTC] SITE: Completed request 2
+[08-May-2023 12:38:57 UTC] Sync process for Gutenberg Blocks is done.
+[08-May-2023 16:38:38 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[08-May-2023 16:38:38 UTC] Erreur d’événement de déplanification de tâche pour le crochet woocommerce_cancel_unpaid_orders. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":false,"args":[]}
+[11-Jun-2023 13:42:56 UTC] Sync process for Gutenberg Blocks has started.
+[11-Jun-2023 13:42:56 UTC] CATEGORY:Importing categories..
+[11-Jun-2023 13:42:56 UTC] CATEGORY:Storing in option ast-block-templates-categories
+[11-Jun-2023 13:42:56 UTC] CATEGORY:Completed category import.
+[11-Jun-2023 13:42:56 UTC] BLOCK: Getting Total Blocks
+[11-Jun-2023 13:42:56 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/get-blocks-count/?page_builder=gutenberg&wireframe=yes
+[11-Jun-2023 13:42:56 UTC] BLOCK: Requests count 4
+[11-Jun-2023 13:42:56 UTC] BLOCK: Importing request 1 ..
+[11-Jun-2023 13:42:56 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=1&wireframe=yes
+[11-Jun-2023 13:42:57 UTC] BLOCK: Storing in option ast-block-templates-blocks-1
+[11-Jun-2023 13:42:57 UTC] BLOCK: Completed request 1
+[11-Jun-2023 13:42:57 UTC] BLOCK: Importing request 2 ..
+[11-Jun-2023 13:42:57 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=2&wireframe=yes
+[11-Jun-2023 13:42:57 UTC] BLOCK: Storing in option ast-block-templates-blocks-2
+[11-Jun-2023 13:42:57 UTC] BLOCK: Completed request 2
+[11-Jun-2023 13:42:57 UTC] BLOCK: Importing request 3 ..
+[11-Jun-2023 13:42:57 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=3&wireframe=yes
+[11-Jun-2023 13:42:58 UTC] BLOCK: Storing in option ast-block-templates-blocks-3
+[11-Jun-2023 13:42:58 UTC] BLOCK: Completed request 3
+[11-Jun-2023 13:42:58 UTC] BLOCK: Importing request 4 ..
+[11-Jun-2023 13:42:58 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=4&wireframe=yes
+[11-Jun-2023 13:42:58 UTC] BLOCK: Storing in option ast-block-templates-blocks-4
+[11-Jun-2023 13:42:58 UTC] BLOCK: Completed request 4
+[11-Jun-2023 13:42:58 UTC] SITE: Getting Total Sites
+[11-Jun-2023 13:42:58 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/get-total-pages/?page_builder=gutenberg
+[11-Jun-2023 13:42:58 UTC] SITE: Request count 2
+[11-Jun-2023 13:42:58 UTC] SITE: Importing request 1 ..
+[11-Jun-2023 13:42:58 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=1&page-builder=gutenberg
+[11-Jun-2023 13:42:59 UTC] SITE: Storing in option ast-block-templates-sites-1
+[11-Jun-2023 13:42:59 UTC] SITE: Completed request 1
+[11-Jun-2023 13:42:59 UTC] SITE: Importing request 2 ..
+[11-Jun-2023 13:42:59 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=2&page-builder=gutenberg
+[11-Jun-2023 13:42:59 UTC] SITE: Storing in option ast-block-templates-sites-2
+[11-Jun-2023 13:42:59 UTC] SITE: Completed request 2
+[11-Jun-2023 13:42:59 UTC] Sync process for Gutenberg Blocks is done.
+[11-Jun-2023 14:29:36 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 14:29:36 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 14:30:44 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 14:30:44 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 14:37:44 UTC] The Automattic\WooCommerce\Admin\API\Options::update_options function is deprecated since version 3.1.
+[11-Jun-2023 14:37:44 UTC] The Automattic\WooCommerce\Admin\API\Options::update_options function is deprecated since version 3.1.
+[11-Jun-2023 14:37:44 UTC] The Automattic\WooCommerce\Admin\API\Options::update_options function is deprecated since version 3.1.
+[11-Jun-2023 14:37:44 UTC] The Automattic\WooCommerce\Admin\API\Options::update_options function is deprecated since version 3.1.
+[11-Jun-2023 15:14:00 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 15:14:00 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 15:22:16 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 15:22:16 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:05:00 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:05:00 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:09:08 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:09:08 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:13:00 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:13:00 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:17:10 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:17:10 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:19:41 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:19:41 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:25:25 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:25:25 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:30:42 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:30:42 UTC] The Automattic\WooCommerce\Admin\API\Options::get_options function is deprecated since version 3.1.
+[11-Jun-2023 16:55:29 UTC] PHP Warning:  Undefined array key "user" in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-content/plugins/elementor/core/common/modules/connect/module.php on line 225
+[11-Jun-2023 16:55:29 UTC] PHP Warning:  Attempt to read property "email" on null in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-content/plugins/elementor/core/common/modules/connect/module.php on line 225
+[12-Jun-2023 02:33:16 UTC] PHP Warning:  Une erreur imprévue est survenue. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/update.php on line 209
+[12-Jun-2023 02:33:17 UTC] PHP Warning:  Une erreur imprévue est survenue. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/update.php on line 447
+[12-Jun-2023 02:33:17 UTC] PHP Warning:  Une erreur imprévue est survenue. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/update.php on line 728
