@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Juice &#8211; 01 VEGGIES SOLUTIONS</title>
+	<atom:link href="http://vgsolution.local/categorie-produit/juice/feed/" rel="self" type="application/rss+xml" />
+	<link>http://vgsolution.local/</link>
+	<description>Vos légumes beaux et frais, en détail et en gros, sans vous déplacer, c’est ici.</description>
+	<lastBuildDate>Tue, 19 Jun 2018 13:53:16 +0000</lastBuildDate>
+	<language>fr-FR</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.2.2</generator>
+	<item>
+		<title>Farm Fresh Eggs</title>
+		<link>http://vgsolution.local/produit/farm-fresh-eggs/</link>
+					<comments>http://vgsolution.local/produit/farm-fresh-eggs/#respond</comments>
+		
+		<dc:creator><![CDATA[thick]]></dc:creator>
+		<pubDate>Tue, 19 Jun 2018 13:53:16 +0000</pubDate>
+				<guid isPermaLink="false">http://vgsolution.local/produit/farm-fresh-eggs/</guid>
+
+					<description><![CDATA[Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.]]></description>
+										<content:encoded><![CDATA[<p>Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://vgsolution.local/produit/farm-fresh-eggs/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Cashew Butter</title>
+		<link>http://vgsolution.local/produit/cashew-butter/</link>
+					<comments>http://vgsolution.local/produit/cashew-butter/#respond</comments>
+		
+		<dc:creator><![CDATA[thick]]></dc:creator>
+		<pubDate>Tue, 19 Jun 2018 13:30:53 +0000</pubDate>
+				<guid isPermaLink="false">http://vgsolution.local/produit/cashew-butter/</guid>
+
+					<description><![CDATA[Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.]]></description>
+										<content:encoded><![CDATA[<p>Neque porro quisquam est, qui dolore ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non incidunt lores ta porro ame. numquam eius modi tempora incidunt lores ta porro ame.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://vgsolution.local/produit/cashew-butter/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
