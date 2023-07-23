@@ -42,7 +42,8 @@ $calculator_text          = '';
 								} else {
 									printf( '<input type="hidden" name="shipping_method[%1$d]_wcf" data-index="%1$d" id="wcf_shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" />', esc_attr( $index ), esc_attr( sanitize_title( $method->id ) ), esc_attr( $method->id ) );
 								}
-								printf( '<label for="wcf_shipping_method_%1$s_%2$s">%3$s</label>', esc_attr( $index ), esc_attr( sanitize_title( $method->id ) ), esc_attr( wc_cart_totals_shipping_method_label( $method ) ) );
+								// Skipping the escaping check for wc_cart_totals_shipping_method_label as it is of WooCommerce and it does it's own escaping.
+								printf( '<label for="wcf_shipping_method_%1$s_%2$s">%3$s</label>', esc_attr( $index ), esc_attr( sanitize_title( $method->id ) ), wc_cart_totals_shipping_method_label( $method ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								do_action( 'woocommerce_after_shipping_rate', $method, $index );
 								?>
 							</li>

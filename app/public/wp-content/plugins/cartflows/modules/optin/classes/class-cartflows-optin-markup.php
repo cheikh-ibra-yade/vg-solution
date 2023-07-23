@@ -651,17 +651,16 @@ class Cartflows_Optin_Markup {
 	public function save_optin_fields( $order_id, $posted ) {
 		// We are calling this function on WooCommerce action where nonce is verified.
 		//phpcs:disable WordPress.Security.NonceVerification.Missing
-		if ( isset( $_POST['_wcf_optin_id'] ) ) {
-			$optin_id = intval( wp_unslash( $_POST['_wcf_optin_id'] ) );
+		$optin_id = isset( $_POST['_wcf_optin_id'] ) ? intval( wp_unslash( $_POST['_wcf_optin_id'] ) ) : 0;
 
+		if ( CARTFLOWS_STEP_POST_TYPE === get_post_type( $optin_id ) ) {
 			update_post_meta( $order_id, '_wcf_optin_id', $optin_id );
+		}
 
-			if ( isset( $_POST['_wcf_flow_id'] ) ) {
+		$flow_id = isset( $_POST['_wcf_flow_id'] ) ? intval( wp_unslash( $_POST['_wcf_flow_id'] ) ) : 0;
 
-				$flow_id = intval( wp_unslash( $_POST['_wcf_flow_id'] ) );
-
-				update_post_meta( $order_id, '_wcf_flow_id', $flow_id );
-			}
+		if ( CARTFLOWS_FLOW_POST_TYPE === get_post_type( $flow_id ) ) {
+			update_post_meta( $order_id, '_wcf_flow_id', $flow_id );
 		}
 		//phpcs:enable WordPress.Security.NonceVerification.Missing
 

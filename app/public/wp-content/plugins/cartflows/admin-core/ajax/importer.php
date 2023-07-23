@@ -374,7 +374,19 @@ class Importer extends AjaxBase {
 
 		wcf()->logger->import_log( 'STARTED! Importing Step' );
 
-		$flow_id    = ( isset( $_POST['flow_id'] ) ) ? absint( $_POST['flow_id'] ) : '';
+		$flow_id = ( isset( $_POST['flow_id'] ) ) ? absint( $_POST['flow_id'] ) : 0;
+
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+			wp_send_json_error(
+				array(
+					array(
+						'status'  => false,
+						'message' => __( 'Invalid Flow Id has been provided.', 'cartflows' ),
+					),
+				)
+			);
+		}
+
 		$step_type  = ( isset( $_POST['step_type'] ) ) ? sanitize_text_field( $_POST['step_type'] ) : '';
 		$step_title = ( isset( $_POST['step_title'] ) ) ? sanitize_text_field( $_POST['step_title'] ) : '';
 		$step_title = isset( $_POST['step_name'] ) && ! empty( $_POST['step_name'] ) ? sanitize_text_field( wp_unslash( $_POST['step_name'] ) ) : $step_title;

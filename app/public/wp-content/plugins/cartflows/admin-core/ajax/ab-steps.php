@@ -81,17 +81,20 @@ class AbSteps extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
-		if ( isset( $_POST['step_id'] ) ) {
-			$step_id = intval( $_POST['step_id'] );
-		}
+		$step_id = isset( $_POST['step_id'] ) ? intval( $_POST['step_id'] ) : 0;
+
 		$result = array(
 			'status' => false,
 			/* translators: %s step id */
-			'text'   => sprintf( __( 'Can\'t create a variation for this step - %s', 'cartflows' ), $step_id ),
+			'text'   => sprintf( __( 'Can\'t create a variation for this step - %s, Invalid Step ID.', 'cartflows' ), $step_id ),
 		);
 
 		if ( ! $step_id ) {
 			wp_send_json( $result );
+		}
+
+		if ( CARTFLOWS_STEP_POST_TYPE !== get_post_type( $step_id ) ) {
+			wp_send_json_error( $result );
 		}
 
 		update_post_meta( $step_id, 'wcf-hide-step', true );
@@ -127,24 +130,25 @@ class AbSteps extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
-		if ( isset( $_POST['step_id'] ) ) {
-			$step_id = intval( $_POST['step_id'] );
-		}
+		$step_id    = isset( $_POST['step_id'] ) ? intval( $_POST['step_id'] ) : 0;
+		$flow_id    = isset( $_POST['flow_id'] ) ? intval( $_POST['flow_id'] ) : 0;
+		$control_id = isset( $_POST['control_id'] ) ? intval( $_POST['control_id'] ) : 0;
 
-		if ( isset( $_POST['flow_id'] ) ) {
-			$flow_id = intval( $_POST['flow_id'] );
-		}
-
-		if ( isset( $_POST['control_id'] ) ) {
-			$control_id = intval( $_POST['control_id'] );
-		}
 		$result = array(
 			'status' => false,
 			/* translators: %s step id */
-			'text'   => sprintf( __( 'Can\'t delete a variation for this step - %s', 'cartflows' ), $step_id ),
+			'text'   => sprintf( __( 'Can\'t delete a variation for this step - %s, Invalid Step Id or Flow Id.', 'cartflows' ), $step_id ),
 		);
 
 		if ( ! $step_id || ! $flow_id ) {
+			wp_send_json( $result );
+		}
+
+		if ( CARTFLOWS_STEP_POST_TYPE !== get_post_type( $step_id ) ) {
+			wp_send_json( $result );
+		}
+
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
 			wp_send_json( $result );
 		}
 
@@ -210,13 +214,9 @@ class AbSteps extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
-		if ( isset( $_POST['step_id'] ) ) {
-			$step_id = intval( $_POST['step_id'] );
-		}
+		$step_id = isset( $_POST['step_id'] ) ? intval( $_POST['step_id'] ) : 0;
+		$flow_id = isset( $_POST['flow_id'] ) ? intval( $_POST['flow_id'] ) : 0;
 
-		if ( isset( $_POST['flow_id'] ) ) {
-			$flow_id = intval( $_POST['flow_id'] );
-		}
 		$result = array(
 			'status' => false,
 			/* translators: %s step id */
@@ -224,6 +224,10 @@ class AbSteps extends AjaxBase {
 		);
 
 		if ( ! $step_id ) {
+			wp_send_json( $result );
+		}
+
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
 			wp_send_json( $result );
 		}
 
@@ -266,7 +270,7 @@ class AbSteps extends AjaxBase {
 				array(
 					'flow_id' => $flow_id,
 					'step_id' => $step_id,
-				) 
+				)
 			);
 
 			$result = array(

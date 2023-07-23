@@ -151,7 +151,7 @@ class Cartflows_Modern_Checkout {
 				<div class="woocommerce-billing-fields-custom">
 					<h3><?php echo esc_html( apply_filters( 'cartflows_woo_customer_info_text', __( 'Customer information', 'cartflows' ) ) ); ?>
 						<?php if ( ! is_user_logged_in() && $is_allow_login ) { ?>
-							<div class="woocommerce-billing-fields__customer-login-label"><?php /* translators: %1$s: Link HTML start, %2$s Link HTML End */ echo wp_kses_post( sprintf( __( 'Already have an account? %1$1s Log in%2$2s', 'cartflows' ), '<a href="javascript:" class="wcf-customer-login-url">', '</a>' ) ); ?></div>
+							<div class="woocommerce-billing-fields__customer-login-label"><?php /* translators: %1$s: Link HTML start, %2$s Link HTML End */ echo wp_kses_post( sprintf( __( 'Already have an account? %1$1s Log in%2$2s', 'cartflows' ), '<a href="#!" class="wcf-customer-login-url">', '</a>' ) ); ?></div>
 						<?php } ?>
 					</h3>
 					<div class="woocommerce-billing-fields__customer-info-wrapper">

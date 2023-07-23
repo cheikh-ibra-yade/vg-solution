@@ -3,7 +3,7 @@ Contributors: sujaypawar, wpcrafter
 Tags: woocommerce, funnel builder, sales funnels, elementor, beaver builder
 Requires at least: 5.8
 Tested up to: 6.2
-Stable tag: 1.11.10
+Stable tag: 1.11.13
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -321,6 +321,17 @@ This includes, but is not limited to:
 5. Easily edit anything with your page builder.
 
 == Changelog ==
+
+= Version 1.11.13 - Tuesday, 6th June 2023 =
+- Improvement: Additional checks added to validate data in flow & step operations.
+
+= Version 1.11.12 - Friday, 2nd June 2023 =
+- Fix: Updated post operation methods for better security enforcement.
+
+= Version 1.11.11 - Thursday, 25th May 2023 =
+- Fix: Fixed the reloading of checkout page when clicked on the log in link while in incognito/private browser window.
+- Fix: Raw HTML was displayed for shipping methods in order summary in mobile devices.
+- Fix: Showing raw HTML in weekly report email.
 
 = Version 1.11.10 - Monday, 24th April 2023 =
 * Improvement: Restructured the code to enhance the security of the plugin.

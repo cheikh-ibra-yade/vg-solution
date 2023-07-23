@@ -83,15 +83,18 @@ class Steps extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
-		if ( isset( $_POST['step_id'] ) && isset( $_POST['new_step_title'] ) ) {
-			$step_id        = intval( $_POST['step_id'] );
-			$new_step_title = sanitize_text_field( $_POST['new_step_title'] );
-		}
+		$step_id        = isset( $_POST['step_id'] ) ? intval( $_POST['step_id'] ) : 0;
+		$new_step_title = isset( $_POST['new_step_title'] ) ? sanitize_text_field( $_POST['new_step_title'] ) : '';
 
 		$result = array(
 			'status' => false,
 			'text'   => __( 'Can\'t update the step title', 'cartflows' ),
 		);
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_STEP_POST_TYPE !== get_post_type( $step_id ) ) {
+			wp_send_json( $result );
+		}
 
 		if ( empty( $step_id ) || empty( $new_step_title ) ) {
 			wp_send_json( $result );
@@ -146,6 +149,11 @@ class Steps extends AjaxBase {
 		);
 
 		if ( ! $flow_id || ! $step_id ) {
+			wp_send_json( $result );
+		}
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) || CARTFLOWS_STEP_POST_TYPE !== get_post_type( $step_id ) ) {
 			wp_send_json( $result );
 		}
 
@@ -297,10 +305,8 @@ class Steps extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
-		if ( isset( $_POST['post_id'] ) && isset( $_POST['step_id'] ) ) {
-			$flow_id = intval( $_POST['post_id'] );
-			$step_id = intval( $_POST['step_id'] );
-		}
+		$flow_id = isset( $_POST['post_id'] ) ? intval( $_POST['post_id'] ) : 0;
+		$step_id = isset( $_POST['step_id'] ) ? intval( $_POST['step_id'] ) : 0;
 
 		$result = array(
 			'status' => false,
@@ -310,6 +316,11 @@ class Steps extends AjaxBase {
 		);
 
 		if ( ! $flow_id || ! $step_id ) {
+			wp_send_json( $result );
+		}
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) || CARTFLOWS_STEP_POST_TYPE !== get_post_type( $step_id ) ) {
 			wp_send_json( $result );
 		}
 
@@ -386,7 +397,7 @@ class Steps extends AjaxBase {
 			'status' => false,
 			'reload' => false,
 			/* translators: %s flow id */
-			'text'   => sprintf( __( 'No data is saved', 'cartflows' ) ),
+			'text'   => sprintf( __( 'Invalid Step Id has been provided.', 'cartflows' ) ),
 		);
 
 		if ( ! isset( $_POST['post_id'] ) || ! isset( $_POST['step_id'] ) ) {
@@ -394,6 +405,10 @@ class Steps extends AjaxBase {
 		}
 
 		$step_id = isset( $_POST['step_id'] ) ? intval( $_POST['step_id'] ) : 0;
+
+		if ( CARTFLOWS_STEP_POST_TYPE !== get_post_type( $step_id ) ) {
+			wp_send_json_error( $result );
+		}
 
 		$step_tile = isset( $_POST['post_title'] ) ? sanitize_text_field( wp_unslash( $_POST['post_title'] ) ) : get_the_title( $step_id );
 		if ( '' === $step_tile ) {

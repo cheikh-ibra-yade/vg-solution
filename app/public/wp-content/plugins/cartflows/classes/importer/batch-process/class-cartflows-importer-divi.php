@@ -80,6 +80,10 @@ if ( ! class_exists( 'CartFlows_Importer_Divi' ) ) :
 		 */
 		public function import_single_post( $post_id = 0 ) {
 
+			if ( CARTFLOWS_STEP_POST_TYPE !== get_post_type( $post_id ) ) {
+				return;
+			}
+
 			// Allow the SVG tags in batch update process.
 			add_filter( 'wp_kses_allowed_html', array( $this, 'allowed_tags_and_attributes' ), 10, 2 );
 

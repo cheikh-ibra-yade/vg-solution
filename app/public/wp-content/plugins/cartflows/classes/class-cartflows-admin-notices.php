@@ -41,7 +41,7 @@ class Cartflows_Admin_Notices {
 	 */
 	public function __construct() {
 
-		add_action( 'admin_init', array( $this, 'show_admin_notices' ) );
+		add_action( 'admin_head', array( $this, 'show_admin_notices' ) );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'notices_scripts' ) );
 

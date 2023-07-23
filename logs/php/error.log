@@ -112,3 +112,85 @@
 [14-Jun-2023 13:06:10 UTC] PHP Warning:  Une erreur imprévue est survenue. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/update.php on line 209
 [15-Jun-2023 08:04:34 UTC] PHP Warning:  Une erreur imprévue est survenue. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/update.php on line 447
 [15-Jun-2023 08:04:34 UTC] PHP Warning:  Une erreur imprévue est survenue. Il pourrait y avoir un problème avec WordPress.org ou la configuration de ce serveur. Si vous continuez à rencontrer ce problème, veuillez vous rendre sur les <a href="https://wpfr.net/support">forums de support</a>. (WordPress n’a pas pu établir de connexion sécurisée vers WordPress.org. Veuillez contacter l’administrateur ou l’administratrice de votre serveur.) in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/update.php on line 728
+[27-Jun-2023 15:19:31 UTC] Sync process for Gutenberg Blocks has started.
+[27-Jun-2023 15:19:31 UTC] CATEGORY:Importing categories..
+[27-Jun-2023 15:19:31 UTC] CATEGORY:Storing in option ast-block-templates-categories
+[27-Jun-2023 15:19:31 UTC] CATEGORY:Completed category import.
+[27-Jun-2023 15:19:31 UTC] BLOCK: Getting Total Blocks
+[27-Jun-2023 15:19:31 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/get-blocks-count/?page_builder=gutenberg&wireframe=yes
+[27-Jun-2023 15:19:31 UTC] BLOCK: Requests count 4
+[27-Jun-2023 15:19:31 UTC] BLOCK: Importing request 1 ..
+[27-Jun-2023 15:19:31 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=1&wireframe=yes
+[27-Jun-2023 15:19:32 UTC] BLOCK: Storing in option ast-block-templates-blocks-1
+[27-Jun-2023 15:19:32 UTC] BLOCK: Completed request 1
+[27-Jun-2023 15:19:32 UTC] BLOCK: Importing request 2 ..
+[27-Jun-2023 15:19:32 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=2&wireframe=yes
+[27-Jun-2023 15:19:32 UTC] BLOCK: Storing in option ast-block-templates-blocks-2
+[27-Jun-2023 15:19:32 UTC] BLOCK: Completed request 2
+[27-Jun-2023 15:19:32 UTC] BLOCK: Importing request 3 ..
+[27-Jun-2023 15:19:32 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=3&wireframe=yes
+[27-Jun-2023 15:19:32 UTC] BLOCK: Storing in option ast-block-templates-blocks-3
+[27-Jun-2023 15:19:32 UTC] BLOCK: Completed request 3
+[27-Jun-2023 15:19:32 UTC] BLOCK: Importing request 4 ..
+[27-Jun-2023 15:19:32 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=4&wireframe=yes
+[27-Jun-2023 15:19:33 UTC] BLOCK: Storing in option ast-block-templates-blocks-4
+[27-Jun-2023 15:19:33 UTC] BLOCK: Completed request 4
+[27-Jun-2023 15:19:33 UTC] SITE: Getting Total Sites
+[27-Jun-2023 15:19:33 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/get-total-pages/?page_builder=gutenberg
+[27-Jun-2023 15:19:34 UTC] SITE: Request count 2
+[27-Jun-2023 15:19:34 UTC] SITE: Importing request 1 ..
+[27-Jun-2023 15:19:34 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=1&page-builder=gutenberg
+[27-Jun-2023 15:19:35 UTC] SITE: Storing in option ast-block-templates-sites-1
+[27-Jun-2023 15:19:35 UTC] SITE: Completed request 1
+[27-Jun-2023 15:19:35 UTC] SITE: Importing request 2 ..
+[27-Jun-2023 15:19:35 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=2&page-builder=gutenberg
+[27-Jun-2023 15:19:36 UTC] SITE: Storing in option ast-block-templates-sites-2
+[27-Jun-2023 15:19:36 UTC] SITE: Completed request 2
+[27-Jun-2023 15:19:36 UTC] Sync process for Gutenberg Blocks is done.
+[30-Jun-2023 21:10:52 UTC] Erreur d’événement de replanification de tâche pour le crochet action_scheduler_run_queue. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"every_minute","args":["WP Cron"],"interval":60}
+[23-Jul-2023 13:33:29 UTC] PHP Warning:  Cannot modify header information - headers already sent in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/load.php on line 300
+[23-Jul-2023 13:33:29 UTC] PHP Warning:  Cannot modify header information - headers already sent in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/load.php on line 300
+[23-Jul-2023 13:33:29 UTC] PHP Warning:  Cannot modify header information - headers already sent in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/load.php on line 300
+[23-Jul-2023 13:33:29 UTC] PHP Warning:  Cannot modify header information - headers already sent in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/load.php on line 300
+[23-Jul-2023 13:33:29 UTC] PHP Warning:  Cannot modify header information - headers already sent in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/load.php on line 300
+[23-Jul-2023 13:33:29 UTC] PHP Warning:  Cannot modify header information - headers already sent in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/load.php on line 300
+[23-Jul-2023 13:37:50 UTC] PHP Warning:  Cannot modify header information - headers already sent in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/load.php on line 300
+[23-Jul-2023 13:37:50 UTC] PHP Warning:  Cannot modify header information - headers already sent in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-includes/load.php on line 300
+[23-Jul-2023 14:20:15 UTC] PHP Warning:  Undefined variable $selected in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-content/plugins/oneclick-whatsapp-order/includes/multiple-numbers.php on line 258
+[23-Jul-2023 17:12:14 UTC] Sync process for Gutenberg Blocks has started.
+[23-Jul-2023 17:12:14 UTC] CATEGORY:Importing categories..
+[23-Jul-2023 17:12:20 UTC] CATEGORY:Storing in option ast-block-templates-categories
+[23-Jul-2023 17:12:20 UTC] CATEGORY:Completed category import.
+[23-Jul-2023 17:12:20 UTC] BLOCK: Getting Total Blocks
+[23-Jul-2023 17:12:20 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/get-blocks-count/?page_builder=gutenberg&wireframe=yes
+[23-Jul-2023 17:12:22 UTC] BLOCK: Requests count 4
+[23-Jul-2023 17:12:22 UTC] BLOCK: Importing request 1 ..
+[23-Jul-2023 17:12:22 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=1&wireframe=yes
+[23-Jul-2023 17:12:24 UTC] BLOCK: Storing in option ast-block-templates-blocks-1
+[23-Jul-2023 17:12:24 UTC] BLOCK: Completed request 1
+[23-Jul-2023 17:12:24 UTC] BLOCK: Importing request 2 ..
+[23-Jul-2023 17:12:24 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=2&wireframe=yes
+[23-Jul-2023 17:12:27 UTC] BLOCK: Storing in option ast-block-templates-blocks-2
+[23-Jul-2023 17:12:27 UTC] BLOCK: Completed request 2
+[23-Jul-2023 17:12:27 UTC] BLOCK: Importing request 3 ..
+[23-Jul-2023 17:12:27 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=3&wireframe=yes
+[23-Jul-2023 17:12:31 UTC] BLOCK: Storing in option ast-block-templates-blocks-3
+[23-Jul-2023 17:12:31 UTC] BLOCK: Completed request 3
+[23-Jul-2023 17:12:31 UTC] BLOCK: Importing request 4 ..
+[23-Jul-2023 17:12:31 UTC] BLOCK: https://websitedemos.net/wp-json/astra-blocks/v1/blocks/?page_builder=gutenberg&per_page=100&page=4&wireframe=yes
+[23-Jul-2023 17:12:33 UTC] BLOCK: Storing in option ast-block-templates-blocks-4
+[23-Jul-2023 17:12:33 UTC] BLOCK: Completed request 4
+[23-Jul-2023 17:12:33 UTC] SITE: Getting Total Sites
+[23-Jul-2023 17:12:33 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/get-total-pages/?page_builder=gutenberg
+[23-Jul-2023 17:12:36 UTC] SITE: Request count 2
+[23-Jul-2023 17:12:36 UTC] SITE: Importing request 1 ..
+[23-Jul-2023 17:12:36 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=1&page-builder=gutenberg
+[23-Jul-2023 17:12:38 UTC] SITE: Storing in option ast-block-templates-sites-1
+[23-Jul-2023 17:12:38 UTC] SITE: Completed request 1
+[23-Jul-2023 17:12:38 UTC] SITE: Importing request 2 ..
+[23-Jul-2023 17:12:38 UTC] SITE: https://websitedemos.net/wp-json/astra-sites/v1/sites-and-pages/?per_page=100&page=2&page-builder=gutenberg
+[23-Jul-2023 17:12:41 UTC] SITE: Storing in option ast-block-templates-sites-2
+[23-Jul-2023 17:12:41 UTC] SITE: Completed request 2
+[23-Jul-2023 17:12:41 UTC] Sync process for Gutenberg Blocks is done.
+[23-Jul-2023 17:39:26 UTC] PHP Warning:  Undefined array key "_wa_order_phone_number_check" in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-content/plugins/oneclick-whatsapp-order/includes/wa-metabox.php on line 100
+[23-Jul-2023 17:43:28 UTC] PHP Warning:  Undefined array key "_wa_order_phone_number_check" in /Users/amadoubeye/Downloads/vg-solution/app/public/wp-content/plugins/oneclick-whatsapp-order/includes/wa-metabox.php on line 100

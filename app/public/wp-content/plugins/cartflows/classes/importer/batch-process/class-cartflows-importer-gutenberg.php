@@ -57,6 +57,10 @@ if ( ! class_exists( 'CartFlows_Importer_Gutenberg' ) ) :
 		 */
 		public function import_single_post( $post_id = 0 ) {
 
+			if ( CARTFLOWS_STEP_POST_TYPE !== get_post_type( $post_id ) ) {
+				return;
+			}
+
 			// Download and replace images.
 			$content = get_post_field( 'post_content', $post_id );
 

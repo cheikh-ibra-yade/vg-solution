@@ -145,7 +145,11 @@ class Flows extends AjaxBase {
 			$flow_id = intval( $_POST['flow_id'] );
 
 			if ( empty( $flow_id ) ) {
-				wp_send_json_success( $response_data );
+				wp_send_json_error( $response_data );
+			}
+
+			if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+				wp_send_json_error( $response_data );
 			}
 
 			$new_flow_title = isset( $_POST['post_title'] ) ? sanitize_text_field( wp_unslash( $_POST['post_title'] ) ) : get_the_title( $flow_id );
@@ -158,15 +162,15 @@ class Flows extends AjaxBase {
 
 			$post_meta = wcf()->options->get_flow_fields( $flow_id );
 			MetaOps::save_meta_fields( $flow_id, $post_meta, 'cartflows_save_flow_meta_settings' );
+
+			$new_flow_data = array(
+				'ID'         => $flow_id,
+				'post_title' => $new_flow_title,
+				'post_name'  => $new_flow_slug,
+			);
+
+			wp_update_post( $new_flow_data );
 		}
-
-		$new_flow_data = array(
-			'ID'         => $flow_id,
-			'post_title' => $new_flow_title,
-			'post_name'  => $new_flow_slug,
-		);
-
-		wp_update_post( $new_flow_data );
 
 		$response_data = array(
 			'message' => __( 'Successfully saved the flow data!', 'cartflows' ),
@@ -199,6 +203,12 @@ class Flows extends AjaxBase {
 		$flow_ids = isset( $_POST['flow_ids'] ) ? array_map( 'intval', explode( ',', sanitize_text_field( $_POST['flow_ids'] ) ) ) : array();
 
 		foreach ( $flow_ids as $key => $flow_id ) {
+
+			/* Check if CartFlows Post type */
+			if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+				continue;
+			}
+
 			/* Get Steps */
 			$steps = get_post_meta( $flow_id, 'wcf-steps', true );
 
@@ -262,6 +272,12 @@ class Flows extends AjaxBase {
 		$new_status = isset( $_POST['new_status'] ) ? sanitize_text_field( wp_unslash( $_POST['new_status'] ) ) : '';
 
 		foreach ( $flow_ids as $key => $flow_id ) {
+
+			/* Check if CartFlows Post type */
+			if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+				continue;
+			}
+
 			/* Get Steps */
 			$steps = get_post_meta( $flow_id, 'wcf-steps', true );
 
@@ -332,6 +348,11 @@ class Flows extends AjaxBase {
 		$flow_ids = isset( $_POST['flow_ids'] ) ? array_map( 'intval', explode( ',', sanitize_text_field( $_POST['flow_ids'] ) ) ) : array();
 
 		foreach ( $flow_ids as $key => $flow_id ) {
+
+			/* Check if CartFlows Post type */
+			if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+				continue;
+			}
 			/* Get Steps */
 			$steps = get_post_meta( $flow_id, 'wcf-steps', true );
 
@@ -385,9 +406,12 @@ class Flows extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
-		if ( isset( $_POST['flow_id'] ) && isset( $_POST['new_flow_title'] ) ) {
-			$flow_id        = intval( $_POST['flow_id'] );
-			$new_flow_title = sanitize_text_field( $_POST['new_flow_title'] );
+		$flow_id        = isset( $_POST['flow_id'] ) ? intval( $_POST['flow_id'] ) : 0;
+		$new_flow_title = isset( $_POST['new_flow_title'] ) ? sanitize_text_field( $_POST['new_flow_title'] ) : '';
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+			wp_send_json_error( array( 'message' => __( 'Invalid Flow ID has been supplied to update title.', 'cartflows' ) ) );
 		}
 
 		$result = array(
@@ -433,11 +457,12 @@ class Flows extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
+		$response_data = array( 'message' => __( 'Invalid Flow ID has been supplied to clone!', 'cartflows' ) );
+
 		/**
 		 * Check flow id
 		 */
 		if ( empty( $_POST['id'] ) ) {
-			$response_data = array( 'message' => __( 'No Flow ID has been supplied to clone!', 'cartflows' ) );
 			wp_send_json_error( $response_data );
 		}
 
@@ -445,6 +470,11 @@ class Flows extends AjaxBase {
 		 * Get the original post id
 		 */
 		$post_id = absint( $_POST['id'] );
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $post_id ) ) {
+			wp_send_json_error( $response_data );
+		}
 
 		/**
 		 * And all the original post data then
@@ -667,12 +697,19 @@ class Flows extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
+		$response_data = array( 'message' => __( 'Invalid Flow ID has been supplied to restore!', 'cartflows' ) );
+
+
 		if ( ! isset( $_POST['flow_id'] ) ) {
-			$response_data = array( 'message' => __( 'No Flow ID has been supplied to delete!', 'cartflows' ) );
 			wp_send_json_error( $response_data );
 		}
 
 		$flow_id = intval( $_POST['flow_id'] );
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+			wp_send_json_error( $response_data );
+		}
 
 		/* Get Steps */
 		$steps = get_post_meta( $flow_id, 'wcf-steps', true );
@@ -727,12 +764,18 @@ class Flows extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
+		$response_data = array( 'message' => __( 'Invalid Flow ID has been supplied to trash!', 'cartflows' ) );
+
 		if ( ! isset( $_POST['flow_id'] ) ) {
-			$response_data = array( 'message' => __( 'No Flow ID has been supplied to delete!', 'cartflows' ) );
 			wp_send_json_error( $response_data );
 		}
 
 		$flow_id = intval( $_POST['flow_id'] );
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+			wp_send_json_error( $response_data );
+		}
 
 		/* Get Steps */
 		$steps = get_post_meta( $flow_id, 'wcf-steps', true );
@@ -787,12 +830,18 @@ class Flows extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
+		$response_data = array( 'message' => __( 'Invalid Flow ID has been supplied to delete!', 'cartflows' ) );
+
 		if ( ! isset( $_POST['flow_id'] ) ) {
-			$response_data = array( 'message' => __( 'No Flow ID has been supplied to delete!', 'cartflows' ) );
 			wp_send_json_error( $response_data );
 		}
 
 		$flow_id = intval( $_POST['flow_id'] );
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+			wp_send_json_error( $response_data );
+		}
 
 		/* Get Steps */
 		$steps = get_post_meta( $flow_id, 'wcf-steps', true );
@@ -849,12 +898,18 @@ class Flows extends AjaxBase {
 			wp_send_json_error( $response_data );
 		}
 
+		$response_data = array( 'message' => __( 'Invalid Flow IDs has been supplied to update status!', 'cartflows' ) );
+
 		if ( ! isset( $_POST['flow_id'] ) ) {
-			$response_data = array( 'message' => __( 'No Flow IDs has been supplied to delete!', 'cartflows' ) );
 			wp_send_json_error( $response_data );
 		}
 
 		$flow_id = isset( $_POST['flow_id'] ) ? intval( $_POST['flow_id'] ) : 0;
+
+		/* Check if CartFlows Post type */
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+			wp_send_json_error( $response_data );
+		}
 
 		$new_status = isset( $_POST['new_status'] ) ? sanitize_text_field( wp_unslash( $_POST['new_status'] ) ) : '';
 
@@ -989,13 +1044,17 @@ class Flows extends AjaxBase {
 			$step_ids = array_map( 'intval', $step_ids );
 		}
 
+		$response_data = array(
+			'status' => false,
+			'text'   => __( 'Invalid flow ID has been provided.', 'cartflows' ),
+		);
+
 		if ( ! $flow_id ) {
-			wp_send_json(
-				array(
-					'status' => false,
-					'text'   => __( 'No flow ID found.', 'cartflows' ),
-				)
-			);
+			wp_send_json( $response_data );
+		}
+
+		if ( CARTFLOWS_FLOW_POST_TYPE !== get_post_type( $flow_id ) ) {
+			wp_send_json( $response_data );
 		}
 
 		if ( empty( $step_ids ) ) {

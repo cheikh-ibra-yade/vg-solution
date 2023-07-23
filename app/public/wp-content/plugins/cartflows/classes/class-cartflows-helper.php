@@ -618,24 +618,6 @@ class Cartflows_Helper {
 	}
 
 	/**
-	 * Save meta option
-	 *
-	 * @since 1.0.0
-	 * @param  int   $post_id     Product ID.
-	 * @param  array $args      Arguments array.
-	 */
-	public static function save_meta_option( $post_id, $args = array() ) {
-
-		if ( is_array( $args ) && ! empty( $args ) ) {
-
-			foreach ( $args as $key => $value ) {
-
-				update_post_meta( $post_id, $key, $value );
-			}
-		}
-	}
-
-	/**
 	 * Check if Elementor page builder is installed
 	 *
 	 * @since 1.0.0

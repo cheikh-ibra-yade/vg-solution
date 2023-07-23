@@ -597,7 +597,8 @@
 	};
 
 	const woocommerce_user_login = function () {
-		$( '.wcf-customer-login-url' ).on( 'click', function login_form() {
+		$( '.wcf-customer-login-url' ).on( 'click', function login_form( e ) {
+			e.preventDefault();
 			const customer_login_wrap = $( '.wcf-customer-login-section' );
 
 			if ( customer_login_wrap.hasClass( 'wcf-show' ) ) {

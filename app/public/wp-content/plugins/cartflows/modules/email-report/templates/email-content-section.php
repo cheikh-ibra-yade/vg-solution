@@ -76,26 +76,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 													<p style="margin: 0; font-size: 14px; text-align: center;">
 														<span style="font-size:12px;">
 															<?php
-															echo esc_html__(
-																'(Last 7 days)',
-																'cartflows'
-															)
-															?>
+																echo esc_html__(
+																	'(Last 7 days)',
+																	'cartflows'
+																);
+																?>
 														</span>
 													</p>
-													<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;">
-														 </p>
-													<p style="margin: 0; font-size: 14px; text-align: center;">
-														<span style="font-size:22px;"><?php echo wp_kses_post( wc_price( $last_month_revenue ) ); ?></span>
+													<p style="margin: 0; font-size: 14px; text-align: center; mso-line-height-alt: 16.8px;">&nbsp;</p>
+													<p style="margin: 0; font-size: 22px; text-align: center;">
+														<?php echo wp_kses_post( wc_price( $last_month_revenue ) ); ?>
 													</p>
-													<p style="margin: 0; text-align: center;"><span style="font-size:12px;">
+													<p style="margin: 0; text-align: center;">
+														<span style="font-size:12px;">
 															<?php
-															echo esc_html__(
-																'(Last 30 days)',
-																'cartflows'
-															)
-															?>
-														</span></p>
+																echo esc_html__(
+																	'(Last 30 days)',
+																	'cartflows'
+																);
+																?>
+														</span>
+													</p>
 												</div>
 											</div>
 										</td>

@@ -1287,10 +1287,16 @@ class Cartflows_Checkout_Markup {
 		if ( ! empty( $flow_id ) && ! empty( $checkout_id ) ) {
 
 			$order = wc_get_order( $order_id );
-
 			if ( $order ) {
-				$order->update_meta_data( '_wcf_flow_id', $flow_id );
-				$order->update_meta_data( '_wcf_checkout_id', $checkout_id );
+
+				if ( CARTFLOWS_FLOW_POST_TYPE === get_post_type( $flow_id ) ) {
+					$order->update_meta_data( '_wcf_flow_id', $flow_id );
+				}
+
+				if ( CARTFLOWS_STEP_POST_TYPE === get_post_type( $checkout_id ) ) {
+					$order->update_meta_data( '_wcf_checkout_id', $checkout_id );
+				}
+
 				$order->save();
 			}
 		}
